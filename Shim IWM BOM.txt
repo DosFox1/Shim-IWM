@@ -1,0 +1,23 @@
+Partlist
+
+Exported from Shim_IWM.brd at 29/Aug/24 13:13
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value          Package          Library       Position (mm)         Orientation
+
+C1       100n 50V       CAP_5.08MM_PITCH Capacitors TH (9.8 6.9)             R180
+C2       100n 50V       CAP_5.08MM_PITCH Capacitors TH (16.9 21.7)           R180
+R1       4k7            RESISTORTHRUHOLE Resistors TH  (13.5 20.6)           R180
+R2       4k7            RESISTORTHRUHOLE Resistors TH  (13.5 24.1)           R180
+R3       4k7            RESISTORTHRUHOLE Resistors TH  (13.5 27.6)           R180
+R4       4k7            RESISTORTHRUHOLE Resistors TH  (13.5 31.1)           R180
+R5       4k7            RESISTORTHRUHOLE Resistors TH  (13.5 34.6)           R180
+R6       4k7            RESISTORTHRUHOLE Resistors TH  (32 34.1)             R180
+R7       4k7            RESISTORTHRUHOLE Resistors TH  (32 37.1)             R180
+R8       4k7            RESISTORTHRUHOLE Resistors TH  (32 31.1)             R180
+CN1      IWM            Turn Pin Header  Headers       (20 9.6)              R0
+U1       74LS32N        DIL14            74xx-us       (27.88 24.19)         R0
+U2       74LS244N       DIL20            74xx-eu       (26.3 9.6)            R0
