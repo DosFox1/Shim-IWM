@@ -1,7 +1,7 @@
 
 ![telegram-cloud-photo-size-4-5947352454880412968-y](https://github.com/user-attachments/assets/80b29d71-7c9d-4a58-96a5-6ca927554258)
 
-# What this
+# What is the Shim IWM?
 
 A simple electronic "shim" to replace an Integrated Woz Machine (the apple floppy controller) in a Macintosh. It contains just enough hardware to pass the initial boot check, and boot into Mac OS via SCSI. This board is also referred to as the "SCHWIM", as I cannot say no to a bad pun.
 This setup has been tested on a Macintosh Plus, Macintosh SE FDHD (which expects a SWIM), as well as a Macintosh LC ii. It is likely this will work in any Macintosh that requires an IWM or SWIM.
@@ -21,7 +21,7 @@ It will **NOT:**
 4) force you to eat toast
 5) gain sentience and try to take over the world (probably)
 
-**How does it work?**
+# How does this even work? 
 
 First of all, I want to say that I HATE THAT THIS SOLUTION WORKS. 
 It is so so so dumb and backwards. If you check internal Apple documents of the era, you will literally find references to engineers saying they don't want to touch the IWM or the associated driver. 
