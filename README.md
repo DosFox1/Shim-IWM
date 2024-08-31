@@ -11,7 +11,7 @@ If you need to repair a Macintosh that has a bad IWM, but you are okay with losi
 Many thanks to Matt Evans (https://github.com/evansm7) for providing help with this project - specifically the data to be put on the databus, and initially testing the modification that led to this board in QEMU as well as Pico-mac.
 Many thanks to Max1zzz (https://github.com/max234252) for testing the SCHWIM in an SE FDHD, as well as in a Macintosh LC ii. 
 
-**What this is not**
+# What this is not
 
 This is in no way a full replacement for the IWM. This is only meant to get the system to get past checking for the floppy controller, and then to boot from a different boot medium - such as ROM, SCSI or IDE. 
 It will **NOT:**
@@ -37,6 +37,7 @@ Effectively, the circuitry works by using an OR gate to monitor the state of Add
 On boot, the Macintosh checks for the presence of the IWM by reading the Status register. 
 The status register contains a single byte of data, with each bit representing the status of a setting in the IWM. These are as follows: 
 
+<pre>
 0 - Latch mode (set in async mode, 1 = async mode) - Macintosh is async, so set to 1
 1 - synchronous handshake protocol (1 = async mode) - Macintosh is async, so set to 1 again
 2 - 1 second onboard timer enable (1 = disabled, 0 = keep motor on for 1 second) - timer disabled, set to 1
@@ -45,8 +46,10 @@ The status register contains a single byte of data, with each bit representing t
 5 - /ENBL1 or /ENBL2 is currently active (0 = active, 1 = inactive) - IWM is enabled, set to 0
 6 - MZ (reserved for future compatability - should be read as 0, but 1 apparently works) - set to 1, could be 0?
 7 - Sense input (1 = sense is high, 0 = sense is low. Could be either, but 1 works) - set to 1, but could be 0?
+</pre>
 
 So from  D7 to D0, the data should read:
+<pre>
 0 - 1
 1 - 1
 2 - 1
@@ -55,11 +58,14 @@ So from  D7 to D0, the data should read:
 5 - 0
 6 - 1
 7 - 1
+</pre>
+
 
 Which in turn, represented in hex, is 0xDF, or 1101111 in binary.
 
 Once the status register is read, the mode register is read straight after. D0 to D4 are the same as the mode register. The mode register contains: 
 
+<pre>
 0 - Latch mode (set in async mode, 1 = async mode) - Macintosh is async, so set to 1
 1 - synchronous handshake protocol (1 = async mode) - Macintosh is async, so set to 1 again
 2 - 1 second onboard timer enable (1 = disabled, 0 = keep motor on for 1 second) - timer disabled, set to 1
@@ -68,15 +74,16 @@ Once the status register is read, the mode register is read straight after. D0 t
 5 - test mode (1 = test mode, 0 = normal operation) - set to normal operation - 0
 6 - MZ-reset (reserved for future compatability - should be read as 0, but 1 apparently works) - set to 1, could be 0?
 7 - Reserved for Future expansion, so could be either, but 1 works - set to 1, but could be 0?
+</pre>
 
-So again, seting the data to 1101111 works for the mode register. 
+So again, seting the data to 1101111 works for the mode register as well. I might be wrong about that explanation, but hey this implementation works!
 After all that, the system does not check the IWM again - or at least when it does, it see that the sense line is still high, so no disk is not installed. 
 
 It basically just sits there, reading a newspaper saying "keep going, you're all good. No problems here", and the Macintosh effectively goes "sounds good!" and keeps booting. 
 
 It is so mind numblingy simple, I almost hate it!
 
-**Construction**
+# Construction
 
 Assembling the board is relatively simple, and can be assembled by anyone with decent soldering abilities. The PCB routing was done in about fifteen minutes on my lunch break, so it is pretty dire. This board is currently at VDEV1, as they have not been tested, but a veroboard implementation has been tested - although it should work! 
 
