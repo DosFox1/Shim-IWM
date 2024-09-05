@@ -85,7 +85,7 @@ It is so mind numblingy simple, I almost hate it!
 
 # Construction
 
-Assembling the board is relatively simple, and can be assembled by anyone with decent soldering abilities. The PCB routing was done in about fifteen minutes on my lunch break, so it is pretty dire. This board is currently at VDEV1, as they have not been tested, but a veroboard implementation has been tested - although it should work! 
+Assembling the board is relatively simple, and can be assembled by anyone with decent soldering abilities. The PCB routing was done in about fifteen minutes on my lunch break, so it is pretty dire. This board is currently at VDEV1,and I'm happy to report that they do work! Please note, to make the best electrical connection from the IWM socket to the SCHWIM - it's ideal to add a turned pin socket between the SCHWIM board and the logic board.
 
 The BOM is as follows, all parts are generic garden variety components:
 
