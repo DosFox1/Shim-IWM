@@ -77,7 +77,7 @@ Once the status register is read, the mode register is read straight after. D0 t
 </pre>
 
 So again, seting the data to 1101111 works for the mode register as well. I might be wrong about that explanation, but hey this implementation works!
-After all that, the system does not check the IWM again - or at least when it does, it see that the sense line is still high, so no disk is not installed. 
+After all that, the system does not check the IWM again - or at least when it does, it see that the sense line is still high, so it believes that no disk has been inserted. 
 
 It basically just sits there, reading a newspaper saying "keep going, you're all good. No problems here", and the Macintosh effectively goes "sounds good!" and keeps booting. 
 
@@ -107,4 +107,4 @@ U1       74LS32N        DIL14            74xx-us       (27.88 24.19)         R0
 U2       74LS244N       DIL20            74xx-eu       (26.3 9.6)            R0
 </pre>
 
-The board should be able to fit over the ROMs, it may be necessary to add another DIP28 socket between the board and the IWM socket. A future SMD version of this board will fit within the socket itself. 
+The board should be able to fit over the ROMs in a Macintosh Plus, it may be necessary to add another DIP28 socket between the board and the IWM socket. A future SMD version of this board will fit within the socket itself. 
