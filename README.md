@@ -107,4 +107,8 @@ U1       74LS32N        DIL14            74xx-us       (27.88 24.19)         R0
 U2       74LS244N       DIL20            74xx-eu       (26.3 9.6)            R0
 </pre>
 
-The board should be able to fit over the ROMs in a Macintosh Plus, it may be necessary to add another DIP28 socket between the board and the IWM socket. A future SMD version of this board will fit within the socket itself. 
+The board should be able to fit over the ROMs in a Macintosh Plus, it may be necessary to add another DIP28 socket between the board and the IWM socket. 
+
+I never got around to designing an SMD version of the SCHWIM - but the wonderful HKZ did!
+See here for the SMD version:
+https://github.com/hkzlab/schwim_repacked
